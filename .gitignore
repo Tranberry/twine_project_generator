@@ -6,5 +6,6 @@
 .vscode/
 samples/
 devRoot/
+build/
 
 .exe
