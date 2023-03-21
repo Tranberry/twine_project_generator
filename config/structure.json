@@ -1,0 +1,75 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Structure Validation",
+  "type": "object",
+  "properties": {
+    "structures": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "root": {
+            "type": "array",
+            "items": {
+              "oneOf": [
+                {
+                  "type":"string"
+                },
+                {
+                  "type":"object"
+                }
+              ],
+              "additionalProperties": {
+                "oneOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "description": "gg",
+                      "oneOf": [
+                        {
+                          "type":"string"
+                        },
+                        {
+                          "type":"object"
+                        }
+
+                      ]
+                    }
+                  },
+                  {
+                    "type": "object",
+                    "additionalProperties": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "required": ["root"]
+      }
+    },
+    "directory-names": {
+      "type": "object",
+      "properties": {
+        "src": {
+          "type": "string",
+          "default": "src"
+        },
+        "dist": {
+          "type": "string",
+          "default": "dist"
+        }
+      },
+      "required": ["src", "dist"]
+    }
+  },
+  "required": ["structures", "directory-names"]
+}

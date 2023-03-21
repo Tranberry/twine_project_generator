@@ -1,0 +1,8 @@
+structures:
+  - root:
+      - src
+      - dist
+
+directory-names:
+  src: src
+  dist: export
