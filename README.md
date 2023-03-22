@@ -11,6 +11,8 @@ A CLI program for generating new `Twine Projects` meaning folder structure and f
 - [x] Check if tweego is installed and either nag about it or add install suggestions in `README.md`
 - [x] Check if VS-Code is installed and add recommendation for `Twine 3 Language Tools`-extension
 - [x] Generates a new project folder with a pre-defined folder structure
+    - [] Internal read structure from yaml
+    - [] Add support for custom yaml folder structure
 - [ ] Creates default files and directories, such as `README.md` and `src/`
 - [ ] Includes customizable templates for generating project files
 - [ ] Automatically adds project files to a version control system, such as Git
