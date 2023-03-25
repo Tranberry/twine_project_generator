@@ -2,7 +2,7 @@
 
 A CLI program for generating new `Twine Projects` meaning folder structure and files.
 
-## NOTICE: Currently this will generate a predefined folder-structure
+**NOTICE: Currently this will generate a predefined folder-structure**
 
 ## Planned features
 
@@ -27,3 +27,4 @@ A CLI program for generating new `Twine Projects` meaning folder structure and f
 - [ ] Make it a wizard or just populate it with defaults`?`
     - [ ] Preferred folder structure and names for the `dist` and `src` folders
     - [ ] Compiler command for `tasks` if vs-code?
+    - [ ] Define favicon?

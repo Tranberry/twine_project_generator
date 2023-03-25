@@ -64,6 +64,7 @@
           "default": "src"
         },
         "dist": {
+          "description": "name of the output folder",
           "type": "string",
           "default": "dist"
         }

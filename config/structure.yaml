@@ -2,7 +2,16 @@ structures:
   - root:
       - src
       - dist
+  
+  - root:
+      - src:
+        - twee
+        - javascript
+        - css
+      - dist:
+        - assets
 
 directory-names:
   src: src
-  dist: export
+  dist: dist
+  
