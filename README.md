@@ -8,8 +8,9 @@ A CLI program for generating new `Twine Projects` meaning folder structure and f
 
 - [x] Command line interface (CLI)
     - [ ] Add flags to use for Quick/Fast and/or Test `generator ProjectName --Q --T` so the user can skip any questions and just get a simple project folder for testing
-- [x] Check if tweego is installed and either nag about it or add install suggestions in `README.md`
 - [x] Check if VS-Code is installed and add recommendation for `Twine 3 Language Tools`-extension
+- [x] Check if tweego is installed and either nag about it or add install suggestions in `README.md`
+    - [ ] Ask for path and if VS-Code is installed add to task
 - [x] Generates a new project folder with a pre-defined folder structure
     - [ ] Internal read structure from yaml
     - [ ] Add support for custom yaml folder structure
