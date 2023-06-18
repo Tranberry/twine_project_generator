@@ -3,6 +3,8 @@ import 'dart:io';
 import 'package:sc_project_generator/vscode_installed.dart';
 
 import '_globals.dart';
+import 'add_asset_dir_readme.dart';
+import 'print_path.dart';
 import 'vsc_recommendation.dart';
 
 Future<void> makeDirectories(String rootDirectory) async {
@@ -11,50 +13,31 @@ Future<void> makeDirectories(String rootDirectory) async {
 
   // Source directories
   var sourceDir = await Directory('$projectPath/src').create(recursive: true);
-  print(sourceDir.path);
+  printPath(sourceDir);
 
   var stylesDir =
       await Directory('${sourceDir.path}/styles').create(recursive: true);
-  print(stylesDir.path);
+  printPath(stylesDir);
 
   var javascriptDir =
       await Directory('${sourceDir.path}/javascript').create(recursive: true);
-  print(javascriptDir.path);
+  printPath(javascriptDir);
 
   var tweeDir =
       await Directory('${sourceDir.path}/twee').create(recursive: true);
-  print(tweeDir.path);
+  printPath(tweeDir);
 
   // add Distribution directories
   var distributionDir =
       await Directory('$projectPath/dist').create(recursive: true);
-  print(distributionDir.path);
+  printPath(distributionDir);
 
   var distAssetDir =
       await Directory('${distributionDir.path}/assets').create(recursive: true);
-  print(distAssetDir.path);
+  printPath(distAssetDir);
 
   await addAssetDirReadme(distAssetDir);
 
   // if VS Code is installed prepare to add recommended extensions folder and file.
   if (isVSCodeInstalled()) await addVSCRecommendation(projectPath);
-}
-
-Future<void> addAssetDirReadme(Directory distAssetDir) async {
-  var assetDir = await Directory(distAssetDir.path).create(recursive: true);
-  print(assetDir.path);
-
-  var data = '# Add your images, audio, fonts and other media files here';
-
-  var pathAndFileName = '${assetDir.path}/readme.md';
-
-  writeMarkdownFile(data, pathAndFileName);
-}
-
-void writeMarkdownFile(String data, String pathAndFileName) {
-  final fileData = data;
-  final file = File(pathAndFileName);
-  file.writeAsStringSync(fileData);
-
-  print(file.path);
 }

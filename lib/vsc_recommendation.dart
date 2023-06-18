@@ -1,10 +1,13 @@
 import 'dart:io';
+import 'package:sc_project_generator/make_directories.dart';
 import 'package:sc_project_generator/write_json_file.dart';
+
+import 'print_path.dart';
 
 Future<void> addVSCRecommendation(String projectPath) async {
   var vsCodeDir =
       await Directory('$projectPath/.vscode').create(recursive: true);
-  print(vsCodeDir.path);
+  printPath(vsCodeDir);
 
   // Write the file/s
   var data = {
