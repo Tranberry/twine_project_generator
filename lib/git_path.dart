@@ -1,6 +1,6 @@
 import 'dart:io';
 
-bool isGitInPATH() {
+bool isGitInPath() {
   if (Platform.isWindows) {
     var result = Process.runSync('where', ['git.exe']);
     return result.exitCode == 0;
