@@ -1,12 +1,12 @@
 import 'dart:io';
 
 import 'package:sc_project_generator/vscode_installed.dart';
-import 'package:sc_project_generator/write_json_file.dart';
 
 import '_globals.dart';
+import 'vsc_recommendation.dart';
 
 Future<void> makeDirectories(String rootDirectory) async {
-  var projectPath = '$testRoot$rootDirectory';
+  var projectPath = testRoot + rootDirectory;
   // TODO: add different choices for folder structure
 
   // Source directories
@@ -34,18 +34,27 @@ Future<void> makeDirectories(String rootDirectory) async {
       await Directory('${distributionDir.path}/assets').create(recursive: true);
   print(distAssetDir.path);
 
+  await addAssetDirReadme(distAssetDir);
+
   // if VS Code is installed prepare to add recommended extensions folder and file.
-  if (isVSCodeInstalled()) {
-    var vsCodeDir =
-        await Directory('$projectPath/.vscode').create(recursive: true);
-    print(vsCodeDir.path);
+  if (isVSCodeInstalled()) await addVSCRecommendation(projectPath);
+}
 
-    // Write the file/s
-    var data = {
-      'recommendations': ['cyrusfirheir.twee3-language-tools']
-    };
-    var pathAndFileName = '${vsCodeDir.path}/recommendations.json';
+Future<void> addAssetDirReadme(Directory distAssetDir) async {
+  var assetDir = await Directory(distAssetDir.path).create(recursive: true);
+  print(assetDir.path);
 
-    writeJsonFile(data, pathAndFileName);
-  }
+  var data = '# Add your images, audio, fonts and other media files here';
+
+  var pathAndFileName = '${assetDir.path}/readme.md';
+
+  writeMarkdownFile(data, pathAndFileName);
+}
+
+void writeMarkdownFile(String data, String pathAndFileName) {
+  final fileData = data;
+  final file = File(pathAndFileName);
+  file.writeAsStringSync(fileData);
+
+  print(file.path);
 }
