@@ -1,5 +1,6 @@
 import 'package:sc_project_generator/make_directories.dart';
 import 'package:sc_project_generator/no_args_guide.dart';
+import 'package:sc_project_generator/tweego_path.dart';
 
 void main(List<String> arguments) {
   if (arguments.isEmpty) {
@@ -7,14 +8,6 @@ void main(List<String> arguments) {
     // if no arguments supplied: exit (return).
     return;
   }
-
-  // if (isTweegoInPATH()) {
-  //   print('Tweego is in path');
-  //   print('');
-  // } else {
-  //   print('Tweego is not in path');
-  //   // TODO: query about local tweego or give DL-link?
-  // }
 
   String projectName =
       arguments[0].trim().replaceAll(' ', '_').replaceAll(RegExp(r'[^\w]'), '');

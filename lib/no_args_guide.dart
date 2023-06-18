@@ -1,4 +1,7 @@
+import 'package:sc_project_generator/vscode_installed.dart';
+
 import '_globals.dart';
+import 'tweego_path.dart';
 
 /// Prints a small use guide to the terminal
 void noArgumentsGuide() {
@@ -17,4 +20,18 @@ void noArgumentsGuide() {
   print('Example: with a flag:');
   print('$generatorName test_project --Q');
   print('');
+
+  // TODO: is this the place to do this?
+  if (isTweegoInPath()) {
+    print('Tweego - is in path');
+  } else {
+    print('Tweego - is not in path');
+    // TODO: query about local tweego or give DL-link?
+  }
+  if (isVSCodeInstalled()) {
+    print('VS Code - is in path(installed)');
+  } else {
+    print('VS Code - is not in path(installed)');
+    // TODO: query about local tweego or give DL-link?
+  }
 }
