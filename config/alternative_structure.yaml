@@ -1,0 +1,25 @@
+- directories:
+  - name: src
+  - name: dist
+
+- directories:
+  - name: src
+    subdirectories:
+      - name: twee
+      - name: js
+      - name: style
+  - name: dist
+    subdirectories:
+      - name: assets
+
+- directories:
+  - name: src
+    subdirectories:
+      - name: twee
+      - name: js
+      - name: style
+        subdirectories:
+          - name: test
+  - name: dist
+    subdirectories:
+      - name: assets

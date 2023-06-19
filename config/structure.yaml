@@ -2,6 +2,17 @@ structures:
   - root:
       - src
       - dist
+
+  - root:
+      - REMOVE:
+        - test
+        - second test
+        - meep:
+          - ralp:
+            - moop
+            - meee
+            - meee
+          - rollo
   
   - root:
       - src:
@@ -9,7 +20,8 @@ structures:
         - javascript
         - css
       - dist:
-        - assets
+        - assets:
+          - test please remove
 
 directory-names:
   src: src

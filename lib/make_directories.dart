@@ -1,7 +1,9 @@
 import 'dart:io';
 
+import 'package:sc_project_generator/utils/twee_start.dart';
+
 import '_globals.dart';
-import 'write_asset_dir_note.dart';
+import 'utils/write_asset_dir_note.dart';
 import 'utils/print_path.dart';
 import 'utils/vsc_recommendation.dart';
 import 'path_tools/vscode_path.dart';
@@ -26,6 +28,8 @@ Future<void> makeDirectories(String rootDirectory) async {
   var tweeDir =
       await Directory('${sourceDir.path}/twee').create(recursive: true);
   logActivity(tweeDir);
+
+  await writeTweeStart(tweeDir, rootDirectory);
 
   // add Distribution directories
   var distributionDir =

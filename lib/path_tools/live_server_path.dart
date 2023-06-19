@@ -1,6 +1,6 @@
 import 'dart:io';
 
-bool gotLiveServer() {
+bool isLiveServerInPath() {
   if (Platform.isWindows) {
     var result = Process.runSync('where', ['live-server']);
     return result.exitCode == 0;

@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'package:sc_project_generator/utils/print_path.dart';
 
-void writeMarkdownFile(String data, String pathAndFileName) {
+void writeSimpleFile(String data, String pathAndFileName) {
   final fileData = data;
   final file = File(pathAndFileName);
 

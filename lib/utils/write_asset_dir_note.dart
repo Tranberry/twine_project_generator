@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'package:sc_project_generator/utils/print_path.dart';
 
-import 'write_markdown_file.dart';
+import '../write_markdown_file.dart';
 
 /// Writes file: 'add assets here'
 Future<void> writeAssetDirNote(Directory distAssetDir) async {
@@ -12,5 +12,5 @@ Future<void> writeAssetDirNote(Directory distAssetDir) async {
 
   var pathAndFileName = '${assetDir.path}/readme.md';
 
-  writeMarkdownFile(data, pathAndFileName);
+  writeSimpleFile(data, pathAndFileName);
 }
