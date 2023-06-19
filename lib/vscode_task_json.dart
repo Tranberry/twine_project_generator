@@ -1,39 +1,38 @@
-import 'dart:convert';
-import 'dart:io';
-
-final data = {
+// FIXME: ignore live-server if not there
+final taskData = {
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  // thanks Greyelf :3 & Gwen(tastic)
   'version': '2.0.0',
   'tasks': [
     {
-      'label': 'Build and Watch Src, Story, Style folders',
+      'label': 'Build and Serve',
+      'dependsOn': [
+        'tweego-watch ./src -o ./dist/*.html -w',
+        'live-server ./dist'
+      ],
+      'dependsOrder': 'parallel',
+      'group': 'build',
+      'isBackground': true
+    },
+    {
+      'label': 'tweego-watch ./src -o ./dist/*.html -w',
       'type': 'shell',
       'command': 'tweego',
-      'group': {'kind': 'build', 'isDefault': true},
-      'args': [
-        'Src',
-        'Story',
-        'Style',
-        '-o',
-        'Output/\${workspaceFolderBasename}.html',
-        '-w'
-      ],
+      'args': ['src', '-o', 'dist/\${workspaceFolderBasename}.html', '-w'],
       'options': {'cwd': '\${workspaceFolder}'},
       'problemMatcher': [],
-      'presentation': {
-        'echo': true,
-        'reveal': 'always',
-        'focus': true,
-        'panel': 'new',
-        'clear': true
-      }
+      'presentation': {'group': 'tester'}
+    },
+    {
+      'label': 'live-server ./dist',
+      'type': 'shell',
+      'command': 'live-server',
+      'args': ['./dist/'],
+      'problemMatcher': [],
+      'presentation': {'group': 'tester'}
     }
   ]
 };
 
-final Map<String, dynamic> dataMap = Map<String, dynamic>.from(data);
-
-void writeJsonToFile(Map<String, dynamic> data, String filePath) {
-  final jsonString = json.encode(data);
-  final file = File(filePath);
-  file.writeAsStringSync(jsonString);
-}
+final Map<String, dynamic> dataMap = Map<String, dynamic>.from(taskData);
