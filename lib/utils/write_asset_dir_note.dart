@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'package:sc_project_generator/utils/print_path.dart';
 
-import '../write_markdown_file.dart';
+import '../write_file.dart';
 
 /// Writes file: 'add assets here'
 Future<void> writeAssetDirNote(Directory distAssetDir) async {

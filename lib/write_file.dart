@@ -7,7 +7,7 @@ void writeSimpleFile(String data, String pathAndFileName) {
   final file = File(pathAndFileName);
 
   if (file.existsSync()) {
-    print('File already exists at path: $pathAndFileName');
+    logActivity('File already exists at path: $pathAndFileName');
   } else {
     file.writeAsStringSync(fileData);
     logActivity(file);

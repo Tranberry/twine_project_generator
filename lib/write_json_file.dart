@@ -7,7 +7,11 @@ import 'utils/print_path.dart';
 void writeJsonFile(Map<String, dynamic> data, String pathAndFileName) {
   final jsonData = json.encode(data);
   final file = File(pathAndFileName);
-  file.writeAsStringSync(jsonData);
 
-  logActivity(file);
+  if (file.existsSync()) {
+    logActivity('File already exists at path: $pathAndFileName');
+  } else {
+    file.writeAsStringSync(jsonData);
+    logActivity(file);
+  }
 }
