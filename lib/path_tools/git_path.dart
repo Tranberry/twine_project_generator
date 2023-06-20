@@ -1,6 +1,6 @@
 import 'dart:io';
 
-/// Tries to find GIT in `path`
+/// Check if GIT is in 'path'
 bool isGitInPath() {
   if (Platform.isWindows) {
     var result = Process.runSync('where', ['git.exe']);
