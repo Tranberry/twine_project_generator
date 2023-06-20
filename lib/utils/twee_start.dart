@@ -4,6 +4,7 @@ import 'package:sc_project_generator/_globals.dart';
 import 'package:sc_project_generator/utils/print_path.dart';
 import 'package:sc_project_generator/write_markdown_file.dart';
 
+/// Writes the minimum needed twee file
 Future<void> writeTweeStart(Directory tweeDir, String projectName) async {
   var srcTweeDir = await Directory(tweeDir.path).create(recursive: true);
   logActivity(tweeDir);

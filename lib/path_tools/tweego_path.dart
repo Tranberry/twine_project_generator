@@ -1,5 +1,6 @@
 import 'dart:io';
 
+/// Check if TWEEGO is in 'path'
 bool isTweegoInPath() {
   if (Platform.isWindows) {
     var result = Process.runSync('where', ['tweego.exe']);

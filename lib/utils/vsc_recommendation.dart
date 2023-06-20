@@ -4,6 +4,7 @@ import 'package:sc_project_generator/write_json_file.dart';
 
 import 'print_path.dart';
 
+/// Adds VSC reccomendation for the leading (2023) extension for twee files
 Future<void> addVSCRecommendation(String projectPath) async {
   var vsCodeDir =
       await Directory('$projectPath/.vscode').create(recursive: true);

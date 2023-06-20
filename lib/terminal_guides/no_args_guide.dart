@@ -2,7 +2,7 @@ import '../_globals.dart';
 import '../path_tools/tweego_path.dart';
 import '../path_tools/vscode_path.dart';
 
-/// Prints a small use guide to the terminal
+/// Prints a use guide to the terminal
 void noArgumentsGuide() {
   print('');
   print('Usage: $generatorName <project_name> <flag>');

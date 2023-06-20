@@ -3,10 +3,7 @@ import 'dart:io';
 
 import 'utils/print_path.dart';
 
-// var data = {
-//   'recommendations': ['cyrusfirheir.twee3-language-tools']
-// };
-
+/// Takes `data` and writes a valid JSON-file
 void writeJsonFile(Map<String, dynamic> data, String pathAndFileName) {
   final jsonData = json.encode(data);
   final file = File(pathAndFileName);

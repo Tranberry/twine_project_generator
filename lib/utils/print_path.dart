@@ -1,5 +1,6 @@
 import 'dart:io';
 
+/// For printing what the generator creates: `added: path/to/file.tw`
 void logActivity<T>(T input) {
   if (input is Directory) {
     final directory = input;

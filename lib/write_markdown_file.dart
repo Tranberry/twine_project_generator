@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'package:sc_project_generator/utils/print_path.dart';
 
+/// Writes any basic file containing text (`.md`, `.html` etc)
 void writeSimpleFile(String data, String pathAndFileName) {
   final fileData = data;
   final file = File(pathAndFileName);

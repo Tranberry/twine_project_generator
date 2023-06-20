@@ -2,6 +2,7 @@
 final taskData = {
   // See https://go.microsoft.com/fwlink/?LinkId=733558
   // for the documentation about the tasks.json format
+  // made by TRBRY
   // thanks Greyelf :3 & Gwen(tastic)
   'version': '2.0.0',
   'tasks': [

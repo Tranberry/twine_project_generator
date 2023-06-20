@@ -1,5 +1,6 @@
 import 'dart:io';
 
+/// Check if Visual Studio Code is in 'path'
 bool isCodeInPath() {
   if (Platform.isWindows) {
     var code = Process.runSync('where', ['code.cmd']);
